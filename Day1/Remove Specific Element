@@ -1,0 +1,30 @@
+class Solution:
+    def removeElement(self, nums: List[int], val: int) -> int:
+        n=len(nums)
+        left, right = 0,n - 1
+        while left <= right:
+            if nums[left] == val:
+                nums[left] = nums[right]
+                right -= 1
+            else:
+                left += 1
+        return left
+        
+#Better
+        # n=len(nums)
+        # k=0
+        # for i in range (n):
+        #     if nums[i]!=val:
+        #         nums[k]=nums[i]
+        #         k+=1
+        # return k
+
+#bruteforce
+        # n=len(nums)
+        # temp=[]
+        # for num in nums:
+        #     if num!=val:
+        #         temp.append(num)
+        # for i in range(len(temp)):
+        #     nums[i]=temp[i]
+        # return len(temp)
