@@ -1,0 +1,53 @@
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+#optimal1
+        n = len(nums)
+        xor1, xor2 = 0, 0
+
+        # XOR with indices + nums elements
+        for i in range(n):
+            xor1 ^= i
+            xor2 ^= nums[i]
+        xor1 ^= n  
+        return xor1 ^ xor2
+                
+
+
+
+
+
+
+
+                
+#optimal2
+        # n=len(nums)
+        # curr_sum=0
+        # actual_sum=n*(n+1)//2
+        # for i in range(n):
+        #     curr_sum+=nums[i]
+        # miss_no=actual_sum-curr_sum
+        # return miss_no
+
+# #Better
+#         num_set=set(nums)
+#         n=len(nums)
+#         for i in range(n+1):
+#             if i not in num_set:
+#                 return i
+    
+#bruteforce2
+        # n=len(nums)
+        # for i in range(n+1):
+        #     if i not in nums:
+        #         return i
+# #bruteforce1
+#         n=len(nums)
+#         for i in range(0,n+1):
+#             found = False
+#             for j in range(n):
+#                 if i==nums[j]:
+#                     found = True
+#                     break;
+#             if not found:
+#                 return i
+            
