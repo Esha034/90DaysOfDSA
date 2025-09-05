@@ -1,0 +1,70 @@
+class Solution:
+    def rearrangeArray(self, nums: List[int]) -> List[int]:  
+        #Optimal
+        n = len(nums)
+        res=[0]*n
+        posindx=0
+        neindx=1
+        for num in nums:
+            if num>0:
+                res[posindx]=num
+                posindx+=2
+            elif:
+                res[neindx]=num
+                neindx+=2
+        for i in range(n):
+            nums[i] = res[i]
+        return nums 
+
+
+
+# #Better
+#         n = len(nums)
+#         res=[0]*n
+#         posindx=0
+#         neindx=1
+#         for num in nums:
+#             if num>0:
+#                 res[posindx]=num
+#                 posindx+=2
+#             else:
+#                 res[neindx]=num
+#                 neindx+=2
+#         return res      
+
+        
+# #Bruteforce
+
+#         pos=[]
+#         neg=[]
+#         for num in nums:
+#             if num>0:
+#                 pos.append(num)
+#             else:
+#                 neg.append(num)
+#         res=[]
+#         i = j = 0
+#         while i < len(pos) and j < len(neg):
+#             res.append(pos[i])
+#             res.append(neg[j])
+#             i += 1
+#             j += 1
+
+#         return res
+       
+    
+       
+       
+        # n = len(nums)
+        # temp = []
+        
+        # for num in nums:
+        #     if not temp:   # first element
+        #         temp.append(num)
+        #     else:
+        #         if temp[-1] < 0 and num > 0:
+        #             temp.append(num)
+        #         if temp[-1] > 0 and num < 0:
+        #             temp.append(num)
+        # return temp
+        
