@@ -1,0 +1,27 @@
+class Solution:
+    def nextPermutation(self, nums: List[int]) -> None:
+        n = len(nums)
+        pivot = -1
+
+        # Step 1: Find pivot
+        for i in range(n - 2, -1, -1):
+            if nums[i] < nums[i + 1]:
+                pivot = i
+                break
+
+        if pivot != -1:
+            # Step 2: Find rightmost element greater than pivot
+            for j in range(n - 1, pivot, -1):
+                if nums[j] > nums[pivot]:
+                    nums[j], nums[pivot] = nums[pivot], nums[j]
+                    break
+
+        # Step 3: Reverse the suffix (pivot+1 to end)
+        left, right = pivot + 1, n - 1
+        while left < right:
+            nums[left], nums[right] = nums[right], nums[left]
+            left += 1
+            right -= 1
+            
+
+        
