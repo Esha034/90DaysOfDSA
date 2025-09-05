@@ -1,0 +1,95 @@
+class Solution:
+    def setZeroes(self, matrix: List[List[int]]) -> None:
+        m, n = len(matrix), len(matrix[0])
+        
+        firstRowZero = False
+        firstColZero = False
+
+        # Step 1: Check if first row/col need zeroing
+        for j in range(n):
+            if matrix[0][j] == 0:
+                firstRowZero = True
+        for i in range(m):
+            if matrix[i][0] == 0:
+                firstColZero = True
+
+        # Step 2: Use first row & col as markers
+        for i in range(1, m):
+            for j in range(1, n):
+                if matrix[i][j] == 0:
+                    matrix[i][0] = 0
+                    matrix[0][j] = 0
+
+        # Step 3: Zero out based on markers
+        for i in range(1, m):
+            for j in range(1, n):
+                if matrix[i][0] == 0 or matrix[0][j] == 0:
+                    matrix[i][j] = 0
+
+        # Step 4: Handle first row & col sepaerately
+        if firstRowZero:
+            for j in range(n):
+                matrix[0][j] = 0
+        if firstColZero:
+            for i in range(m):
+                matrix[i][0] = 0
+
+
+
+
+
+
+
+
+
+# #Bettter
+#         m, n = len(matrix), len(matrix[0])
+#         col=[0]*n
+#         row=[0]*m
+
+#         # Step 1: Mark rows and cols
+#         for i in range(m):
+#             for j in range(n):
+#                 if matrix[i][j]==0:
+#                     row[i]=1
+#                     col[j]=1
+
+#         #Update matrix
+#         for i in range(m):
+#             for j in range(n):
+#                 if row[i]==1 or col[j]==1:
+#                     matrix[i][j]=0
+
+            
+
+
+
+    #bruteforce
+        # m, n = len(matrix), len(matrix[0])
+
+        # def markrow(matrix, i, n):
+        #     for j in range(n):
+        #         if matrix[i][j] != 0:
+        #             matrix[i][j] = -1   # mark temporarily
+
+        # def markcolumn(matrix, j, m):
+        #     for i in range(m):
+        #         if matrix[i][j] != 0:
+        #             matrix[i][j] = -1   # mark temporarily
+
+        # # Step 1: Mark rows & cols where we find 0
+        # for i in range(m):
+        #     for j in range(n):
+        #         if matrix[i][j] == 0:
+        #             markrow(matrix, i, n)
+        #             markcolumn(matrix, j, m)
+
+        # # Step 2: Convert all -1 to 0
+        # for i in range(m):
+        #     for j in range(n):
+        #         if matrix[i][j] == -1:
+        #             matrix[i][j] = 0
+
+                
+
+        
