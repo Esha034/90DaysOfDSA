@@ -1,0 +1,35 @@
+class Solution:
+    def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+        m, n = len(matrix), len(matrix[0])
+        srow, scol, erow, ecol = 0, 0, m-1, n-1
+        result = []
+        
+        while srow <= erow and scol <= ecol:
+            # Top row
+            for j in range(scol, ecol+1):
+                result.append(matrix[srow][j])
+            
+            # Right col
+            for i in range(srow+1, erow+1):
+                result.append(matrix[i][ecol])
+            
+            # Bottom row (check if not same row)
+            if srow < erow:
+                for j in range(ecol-1, scol-1, -1):
+                    result.append(matrix[erow][j])
+            
+            # Left col (check if not same col)
+            if scol < ecol:
+                for i in range(erow-1, srow, -1):
+                    result.append(matrix[i][scol])
+            
+            srow += 1
+            erow -= 1
+            scol += 1
+            ecol -= 1
+        
+        return result
+
+
+
+        
