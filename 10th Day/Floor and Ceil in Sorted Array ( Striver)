@@ -1,0 +1,18 @@
+class Solution:
+    def getFloorAndCeil(self, nums, x): 
+        n = len(nums)
+        low, high = 0, n-1
+        floor, ceil = -1, -1
+        while low <= high:
+            mid = low + (high - low)//2
+        
+            if nums[mid] == x:
+                return nums[mid], nums[mid]   # both floor & ceil are x
+            elif nums[mid] < x:
+                floor = nums[mid]    # store in floor
+                low = mid + 1
+            else:  # nums[mid] > x
+                ceil = nums[mid]     # store in ceil 
+                high = mid - 1
+    
+        return floor, ceil
