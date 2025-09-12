@@ -1,0 +1,20 @@
+class Solution:
+    def longestSubarray(self, arr, k):
+        n=len(arr)
+        pre_sum=0
+        max_len=0
+        pre_map={}
+        for i in range(n):
+            pre_sum+=arr[i]
+            
+            if pre_sum==k:
+                max_len=max(max_len,i+1)
+                
+            if (pre_sum-k) in pre_map:
+                length=i-pre_map[pre_sum-k]
+                max_len = max(max_len, length)
+            
+            if pre_sum not in pre_map:  # store only first occurrence
+                pre_map[pre_sum] = i
+        
+        return max_len
