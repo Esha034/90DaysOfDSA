@@ -1,0 +1,38 @@
+class Solution:
+    def findKRotation(self, nums):
+        n = len(nums)
+        low, high = 0, n - 1
+        index = 0   
+
+        while low <= high:
+            # Case 1: Already sorted subarray
+            if nums[low] <= nums[high]:
+                if nums[low] < nums[index]:
+                    index = low
+                break
+
+            mid = low + (high - low) // 2
+
+            # Check if mid is smaller than current minimum
+            if nums[mid] < nums[index]:
+                index = mid
+
+            # Decide search direction
+            if nums[low] <= nums[mid]:
+                low = mid + 1   
+            else:
+                high = mid - 1  
+
+        return index
+
+
+         # n=len(nums)
+        # res=0
+        # for i in range:
+        #     if nums[i]< nums[res]:
+        #         res=i
+        # return res
+        
+    
+
+
