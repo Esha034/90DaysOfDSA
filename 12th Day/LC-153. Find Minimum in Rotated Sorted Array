@@ -1,0 +1,27 @@
+class Solution:
+    def findMin(self, nums: List[int]) -> int:
+        n=len(nums)
+        res=nums[0]
+        low,high=0,n-1
+        while low<=high:
+            if nums[low]<nums[high]:
+                res=min(res,nums[low])
+                break
+            mid=low+(high-low)//2
+
+            if nums[low]<=nums[mid]:
+                res=min(res,nums[low])
+                low=mid+1
+            else:
+                res=min(res,nums[mid])
+                high=mid-1
+        return res
+
+#bruteforce
+
+        # n=len(nums)
+        # min_val=nums[0]
+        # for i in range(n):
+        #     if nums[i]<min_val:
+        #         min_val=nums[i]
+        # return min_val
