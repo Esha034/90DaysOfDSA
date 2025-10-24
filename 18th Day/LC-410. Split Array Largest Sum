@@ -1,0 +1,29 @@
+class Solution:
+    def splitArray(self, nums: List[int], k: int) -> int:
+        n=len(nums)
+        def countpartitions(nums,maxsum):
+            partition=1
+            subarraysum=0
+            for i in range(n):
+                if nums[i]+subarraysum<=maxsum:
+                    subarraysum+=nums[i]
+                else:
+                    partition+=1
+                    subarraysum=nums[i]
+            if partition>k:
+                return False
+            return True
+
+        low=max(nums)
+        high=sum(nums)
+
+        while low<=high:
+            mid=low+(high-low)//2
+            if countpartitions(nums,mid):
+                high=mid-1
+            else:
+                low=mid+1
+        return low
+    
+
+    
