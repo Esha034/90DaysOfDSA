@@ -1,0 +1,63 @@
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        chars=list(s.strip())
+        
+        left,right=0,len(chars)-1
+        #reverse the entire list
+        while left<right:
+            chars[left],chars[right]=chars[right],chars[left]
+            left+=1
+            right-=1
+        
+        #reverse each character
+        start=0
+        for end in range(len(chars)+1):
+            if end==len(chars) or chars[end]==" ":
+                l,r=start,end-1
+                while l<r:
+                    chars[l], chars[r] = chars[r], chars[l]
+                    l += 1
+                    r -= 1
+                start=end+1
+        print(chars)
+        i=0
+        while i < len(chars)-1:
+            if chars[i]==" " and chars[i+1]==" ":
+                del chars[i]
+            else:
+                i+=1
+        return "".join(chars)
+
+
+
+
+#bruteforce
+#         s=s.strip()
+#         i=len(s)-1
+#         words=[]
+#         word=""
+#         while i>=0:
+#             if s[i]!=" ":
+#                 word=s[i]+word
+#             else:
+#                 if word:
+#                     words.append(word)
+#                     word=""
+#             i-=1
+            
+#         if word:
+#             words.append(word)
+#         return " ".join(words)
+
+
+
+
+
+
+
+
+
+
+
+
+
