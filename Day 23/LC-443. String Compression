@@ -1,0 +1,27 @@
+class Solution:
+    def compress(self, chars: List[str]) -> int:
+        read,write=0,0
+        n=len(chars)
+
+        while read<n:
+            grp_strt=read
+            while read<n and chars[read]==chars[grp_strt]:
+                read+=1
+
+            #replacing group of characters(or single char)with single char
+            chars[write]=chars[grp_strt]
+            #incrementing address for storing each char's count
+            write+=1
+
+            #counting the no. of characters in each group
+            count=read-grp_strt
+
+
+            if count>1:
+                count_str=str(count)
+                for  digit in count_str:
+                    chars[write]=digit
+                    write+=1
+        return write
+            
+       
