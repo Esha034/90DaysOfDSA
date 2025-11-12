@@ -1,1 +1,39 @@
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        hash_map=defaultdict(list)
+        for s in strs:
+            key="".join(sorted(s))
+            
+            hash_map[key].append(s)
+        return list(hash_map.values())
 
+
+
+
+
+#bruteforce
+        # grouped = []  # Final result list of anagram groups
+        # visited = [False] * len(words)  # To keep track of grouped words
+
+        # for i in range(len(words)):
+        #     if visited[i]:
+        #         continue  # Skip if already grouped
+        #     group = [words[i]]  # Start a new group
+        #     visited[i] = True
+            
+        #     for j in range(i + 1, len(words)):
+        #         if not visited[j]:
+        #             # Compare sorted versions of both strings
+        #             if sorted(words[i]) == sorted(words[j]):
+        #                 group.append(words[j])
+        #                 visited[j] = True
+
+        #     grouped.append(group)  # Add the completed group
+
+        # return grouped
+        
+    
+        
+
+
+        
