@@ -1,0 +1,15 @@
+class Solution:
+    def isArmstrong(self, n):
+        if n<0:
+            return False
+        if n == 0:
+            return True
+        t=n
+        arm=0
+        digits = len(str(n))  # number of digits
+
+        while t>0:
+            d=t%10
+            arm=arm+(d**digits)
+            t=t//10
+        return arm==n
