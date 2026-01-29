@@ -1,0 +1,11 @@
+class Solution:    
+    def palindromeCheck(self, s):
+        
+        def helper(l, r):
+            if l >= r:                 # base case
+                return True
+            if s[l] != s[r]:           # mismatch
+                return False
+            return helper(l+1, r-1)    # recursive call
+        
+        return helper(0, len(s)-1)
