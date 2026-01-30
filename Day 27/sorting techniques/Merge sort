@@ -1,0 +1,36 @@
+class Solution:
+    def mergeSort(self, nums):
+        n=len(nums)
+        if n<=1:
+            return nums
+        # Divide the array into two halves
+        mid=n//2
+        # Recursively sort both halves
+        left=self.mergeSort(nums[:mid])
+        right=self.mergeSort(nums[mid:])
+
+        return self.merge(left,right)
+
+    def merge(self,left,right):
+        i=j=0
+        res=[]
+        # Compare elements from both arrays and insert the smaller one
+        while i<len(left) and j<len(right):
+            if left[i]<=right[j]:
+                res.append(left[i])
+                i+=1
+            else:
+                res.append(right[j])
+                j+=1
+       # If elements are left in the left array, add them
+        while i < len(left):
+            res.append(left[i])
+            i += 1
+
+        # If elements are left in the right array, add them
+        while j < len(right):
+            res.append(right[j])
+            j += 1
+
+        return res
+
