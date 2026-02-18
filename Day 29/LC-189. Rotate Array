@@ -1,0 +1,37 @@
+class Solution:
+    def rotate(self, nums: List[int], k: int) -> None:
+        n=len(nums)
+        k=k%n
+        left,right=0,n-1
+
+        def reverse(left,right):
+            while left<right:
+                nums[left],nums[right]=nums[right],nums[left]
+                left+=1
+                right-=1
+
+        reverse(0,n-1)
+        reverse(0,k-1)
+        reverse(k,n-1)
+        
+        
+    #better
+        n=len(nums)
+        temp=[0]*n
+        for i in range(n):
+            new_index=(i+k)%n
+            temp[new_index]=nums[i]
+        for i in range(n):
+            nums[i]=temp[i]
+
+#bruteforce
+        n=len(nums)
+        k=k%n
+        for _ in range(k):
+            last=nums[-1]
+            for i in range(n-1,0,-1):
+                nums[i]=nums[i-1]
+            nums[0]=last
+
+
+        
