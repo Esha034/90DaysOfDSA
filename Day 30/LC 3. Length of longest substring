@@ -11,3 +11,7 @@ class Solution:
             char_set.add(s[right])
             max_len=max(max_len,right-left+1)
         return max_len
+s=input().strip()
+obj=Solution()
+res=obj.lengthOfLongestSubstring(s)
+print(res)
