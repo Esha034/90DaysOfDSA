@@ -1,0 +1,16 @@
+class Solution:
+    def leaders(self, arr):
+        n=len(arr)
+        leader=arr[-1]
+        result=[]
+        result.append(leader)
+        for i in range(n-2,-1,-1):
+            if arr[i]>=leader:
+                leader=arr[i]
+                result.append(leader)
+        return result[::-1]
+n=int(input().strip())
+arr=list(map(int,input().split()))
+obj = Solution()           # object creation of class Solution
+res = obj.leaders(arr)     # method calling
+print(*res)
