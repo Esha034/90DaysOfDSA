@@ -1,0 +1,17 @@
+s = input()   # arr[]={1,2,3,4,5,6}
+
+# Step 1: extract numbers part
+nums_str = s[s.find("{")+1 : s.find("}")]
+
+# Step 2: convert into list
+nums = list(map(int, nums_str.split(",")))
+
+# Step 3: sum function
+def arrsum(arr):
+    total = 0
+    for num in arr:
+        total += num
+    return total
+
+# Step 4: print result
+print(arrsum(nums))
