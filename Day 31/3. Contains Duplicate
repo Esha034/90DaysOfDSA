@@ -1,0 +1,30 @@
+#optimal 
+
+n = int(input().strip())
+arr = list(map(int, input().split(",")))
+
+arr.sort()   # sort array
+
+duplicate = False
+
+for i in range(n - 1):
+    if arr[i] == arr[i + 1]:
+        duplicate = True
+        break
+
+print(duplicate)
+
+
+#better 
+
+n=int(input().strip())
+arr=list(map(int,input().split(",")))
+seen=set()
+duplicate=False
+for i in range(n):
+    if arr[i] in seen:
+        duplicate=True
+        break
+    seen.add(arr[i])
+print(duplicate)
+
