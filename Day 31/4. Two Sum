@@ -1,0 +1,37 @@
+#optimal
+
+n = int(input().strip())
+arr = list(map(int, input().split(",")))
+target = int(input())
+
+arr.sort()
+
+left = 0
+right = n - 1
+
+while left < right:
+    s = arr[left] + arr[right]
+    
+    if s == target:
+        print(left, right)
+        break
+    elif s < target:
+        left += 1
+    else:
+        right -= 1
+
+
+
+# better
+
+n=int(input().strip())
+arr=list(map(int,input().split(",")))
+target=int(input())
+seen={}
+for i in range(n):
+    needed=target-arr[i]
+    if needed in seen:
+        print(seen[needed],i)
+        break
+    seen[arr[i]]=i
+
