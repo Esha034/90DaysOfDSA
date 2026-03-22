@@ -1,0 +1,10 @@
+arr=list(map(int,input().split(",")))      #taking comma separted numbers as an input 
+
+n=len(arr)                    #size of the array
+expected_sum=n*(n+1)//2
+calculated_sum=0
+
+for num in arr:
+    calculated_sum+=num
+    
+print(expected_sum-calculated_sum)     #printing missing number
