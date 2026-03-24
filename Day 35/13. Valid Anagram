@@ -1,0 +1,21 @@
+# Valid Anagram
+
+s = input().strip()
+t = input().strip()
+
+if len(s) != len(t):
+    print("False")
+else:
+    count = [0] * 26   # only lowercase letters
+
+    for i in range(len(s)):
+        count[ord(s[i]) - ord('a')] += 1
+        count[ord(t[i]) - ord('a')] -= 1
+
+    is_anagram = True
+    for val in count:
+        if val != 0:
+            is_anagram = False
+            break
+
+    print("True" if is_anagram else "False")
