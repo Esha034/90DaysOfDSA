@@ -1,14 +1,15 @@
 arr=list(map(int,input().split()))
 ssmall,small=float('inf'),float('inf')
 slar,lar=float('-inf'),float('-inf')
+
 for n in arr:
+#for smallest and second smallest element
     if n<small:
         ssmall=small
         small=n
     elif small<n<ssmall:
         ssmall=n
-        
-for n in arr:
+#for largest and second largest
     if n>lar:
         slar=lar
         lar=n
