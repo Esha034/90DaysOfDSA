@@ -15,3 +15,34 @@ elif num*sign>=2**31-1:
     print(2**31-1)
 else:
     print(num*sign)
+
+
+# LC-8(STRING)
+
+class Solution:
+    def myAtoi(self, s: str) -> int:
+        s=s.strip()
+        num = 0
+        i = 0
+        sign = 1
+
+        if i < len(s) and s[i] in ['-', '+']:
+            if s[i] == '-':
+                sign = -1
+            i += 1
+
+        while i < len(s) and s[i].isdigit():
+            num = num * 10 + int(s[i])
+            i += 1
+
+        # Apply sign
+        num = sign * num
+
+        # Handle overflow
+        if num <= -2**31:
+            return -2**31
+        elif num >= 2**31 - 1:
+            return 2**31 - 1
+        else:
+            return num
+        
