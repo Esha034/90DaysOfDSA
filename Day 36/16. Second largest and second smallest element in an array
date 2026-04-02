@@ -1,0 +1,26 @@
+arr=list(map(int,input().split()))
+ssmall,small=float('inf'),float('inf')
+slar,lar=float('-inf'),float('-inf')
+for n in arr:
+    if n<small:
+        ssmall=small
+        small=n
+    elif small<n<ssmall:
+        ssmall=n
+        
+for n in arr:
+    if n>lar:
+        slar=lar
+        lar=n
+    elif lar>n>slar:
+        slar=n
+if ssmall == float('inf'):
+    print("No second smallest element")
+else:
+    print(f"second smallest: {ssmall}")
+
+if slar == float('-inf'):
+    print("No second largest element")
+else:
+    print(f"second largest: {slar}")
+
