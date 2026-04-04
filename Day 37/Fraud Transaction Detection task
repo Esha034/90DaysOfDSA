@@ -1,0 +1,34 @@
+#taking input
+
+n=int(input())
+transactions=[]
+for i in range(n):
+    s,r,t,a=input().split()
+    transactions.append([s,r,float(t),int(a)])
+fraud=[False]*n
+
+#compare every pair of transcation
+
+for i in range(n):
+    for j in range(i+1,n):
+        s1,r1,t1,a1=transactions[i]
+        s2,r2,t2,a2=transactions[j]
+
+      #checking fraud condition
+
+        if s1==s2 and r1==r2 and a1==a2:
+            if abs(t1-t2)<=1:
+                fraud[i]=True
+                fraud[j]=True
+# function to format time(11.00->11,10.50->10.5)
+
+def format_time(t):
+    if t==int(t):
+        return str(int(t))
+    else:
+        return str(t).rstrip('0').rstrip('.')
+        
+for i in range(n):
+    if fraud[i]:
+        s,r,t,a=transactions[i]
+        print(s,r,format_time(t),a)
