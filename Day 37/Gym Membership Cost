@@ -1,0 +1,6 @@
+n=int(input())
+mthly_plans={1:2000,3:5000,6:8000,9:11000,12:12000}
+if n in mthly_plans:
+    print(mthly_cost[n])
+else:
+    print("error")
