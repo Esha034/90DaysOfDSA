@@ -1,0 +1,26 @@
+m=int(input())
+n=int(input())
+matrix=[]
+
+#taking matrix input
+matrix=[list(map(int,input().split())) for _ in range(m)]
+    
+target=int(input())
+
+left,right=0,(m*n)-1
+
+while left<=right:
+    mid=(left+right)//2
+    
+    row=mid//n
+    col=mid%n
+    
+    if matrix[row][col]==target:
+        print(True)
+        break
+    elif matrix[row][col]<target:
+        left=mid+1
+    else:
+        right=mid-1
+else:
+    print(False)
