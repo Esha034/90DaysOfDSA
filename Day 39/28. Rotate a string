@@ -1,1 +1,10 @@
-
+s = input()
+g=input()
+if len(s)!=len(g):
+    print (False)
+else:
+    temp=s+s
+    if g in temp:
+        print(True)
+    else:
+        print(False)
