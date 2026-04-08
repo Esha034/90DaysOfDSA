@@ -1,1 +1,24 @@
-bjhb
+# the sky is blue
+# blue is sky the
+
+
+
+#optimal
+
+s = input().split()
+
+# split → reverse → join
+result = " ".join(s[::-1])
+
+print(result)
+
+
+
+
+#bruteforce
+
+s=input().split()
+res=[]
+for i in range(len(s)-1,-1,-1):
+    res.append(s[i])
+print(" ".join(res))
