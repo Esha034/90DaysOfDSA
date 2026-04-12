@@ -12,7 +12,7 @@ s=input().strip()
 #split the string into a list of words
 s=s.split()
 
-#3. reverse the string and join with a single space
+#3. reverse the list and join with a single space
 res= " ".join(s[::-1])
 print(res)
 
@@ -20,8 +20,8 @@ print(res)
 
 
 #bruteforce
-
-s=input().split()
+s=input().strip()
+s=s.split()
 res=[]
 for i in range(len(s)-1,-1,-1):
     res.append(s[i])
