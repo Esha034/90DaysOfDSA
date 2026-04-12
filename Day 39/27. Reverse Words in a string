@@ -5,12 +5,16 @@
 
 #optimal
 
-s = input().split()
 
-# split → reverse → join
-result = " ".join(s[::-1])
+#1. remove leading and trailing spaces
+s=input().strip()
 
-print(result)
+#split the string into a list of words
+s=s.split()
+
+#3. reverse the string and join with a single space
+res= " ".join(s[::-1])
+print(res)
 
 
 
