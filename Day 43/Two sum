@@ -1,0 +1,14 @@
+
+nums = list(map(int, input().split()))
+target = int(input())
+
+mp = {}
+
+for i in range(len(nums)):
+    needed = target - nums[i]
+    
+    if needed in mp:
+        print([mp[needed], i])
+        break
+    
+    mp[nums[i]] = i
