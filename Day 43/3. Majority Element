@@ -1,4 +1,4 @@
-#optimal
+#optimal (Boyer-Moore)
 
 nums = list(map(int, input().split()))
 
