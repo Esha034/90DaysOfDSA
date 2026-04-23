@@ -1,0 +1,24 @@
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        current_sum=0
+        max_sum=float('-inf')
+        for num in nums:
+            current_sum+=num
+            max_sum=max(current_sum,max_sum)
+            
+            if current_sum<0:
+                current_sum=0
+        return max_sum
+
+#bruteforce
+        
+        
+        # n=len(nums)
+        # max_sum=float('-inf')
+        # for i in range(n):
+        #     sum=0
+        #     for j in range(i,n):
+        #         sum+=nums[j]
+        #         max_sum=max(max_sum,sum)
+        # return max_sum
+
