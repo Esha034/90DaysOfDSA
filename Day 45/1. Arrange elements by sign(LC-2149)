@@ -1,0 +1,40 @@
+#optimal 
+
+class Solution:
+    def rearrangeArray(self, nums: List[int]) -> List[int]:
+        n=len(nums)
+        posInd,NegInd=0,1
+        res=[0]*n
+        for num in nums:
+            if num>0:
+                res[posInd]=num
+                posInd+=2
+            else:
+                res[NegInd]=num
+                NegInd+=2
+        return res
+
+
+
+
+
+
+
+
+
+
+class Solution:
+    def rearrangeArray(self, nums: List[int]) -> List[int]:
+
+        pos=[]
+        neg=[]
+        for num in nums:
+            if num>0:
+                pos.append(num)
+            else:
+                neg.append(num)
+        res=[]
+        for i in range(len(pos)):
+            res.append(pos[i])
+            res.append(neg[i])
+        return res
