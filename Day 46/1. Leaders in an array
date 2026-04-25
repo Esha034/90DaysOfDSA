@@ -1,0 +1,36 @@
+nums = list(map(int, input().split()))
+
+res = []
+max_so_far = float('-inf')
+
+for i in range(len(nums)-1, -1, -1):
+    if nums[i] > max_so_far:
+        res.append(nums[i])
+        max_so_far = nums[i]
+
+print(res[::-1])
+
+
+
+
+#bruteforce
+
+def leaders(nums):
+    n = len(nums)
+    res = []
+
+    for i in range(n):
+        is_leader = True
+        for j in range(i+1, n):
+            if nums[j] >= nums[i]:
+                is_leader = False
+                break
+        
+        if is_leader:
+            res.append(nums[i])
+
+    return res
+
+    
+#Time complexity
+  O(n²) ❌
