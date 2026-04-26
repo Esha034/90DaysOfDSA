@@ -1,0 +1,16 @@
+class Solution:
+    def subarraySum(self, nums: List[int], k: int) -> int:
+
+        n=len(nums)
+        pre_sum=0
+        mp={0:1}
+        count=0
+        for  num in nums:
+            pre_sum+=num
+
+            if (pre_sum-k) in mp:
+                count+=mp[pre_sum-k]
+            
+            mp[pre_sum]=mp.get(pre_sum,0)+1
+
+        return count
