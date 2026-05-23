@@ -1,0 +1,42 @@
+#bruteforce
+def maximumSubarraySum(nums, k):
+    n = len(nums)
+    max_sum = 0
+
+    for i in range(n - k + 1):
+        sub = nums[i:i+k]
+        if len(set(sub)) == k:
+            max_sum = max(max_sum, sum(sub))
+
+    return max_sum
+
+
+
+#optimal
+
+class Solution:
+    def maximumSubarraySum(self, nums: List[int], k: int) -> int:
+        from collections import defaultdict
+        freq=defaultdict(int)
+        n=len(nums)
+        curr_sum=0
+        max_sum=0
+        l=0
+
+        for r in range(n):
+            freq[nums[r]]+=1
+            curr_sum+=nums[r]
+
+            if r-l+1>k:
+                freq[nums[l]]-=1
+                curr_sum-=nums[l]
+                if freq[nums[l]]==0:
+                    del freq[nums[l]]
+                l+=1
+                
+            if r-l+1==k and len(freq)==k:
+                max_sum=max(max_sum,curr_sum)
+        return max_sum
+
+
+        
