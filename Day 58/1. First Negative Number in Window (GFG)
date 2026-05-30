@@ -1,1 +1,48 @@
 
+#optimal
+
+#User function Template for python3
+
+class Solution:
+    def firstNegInt(self, nums, k):
+        n=len(nums)
+        from collections import deque
+        q=deque()
+        n=len(nums)
+        res=[]
+        l=0
+        for r in range(n):
+            if nums[r]<0:
+                q.append(nums[r])
+        
+            if r-l+1==k:
+                if q:
+                    res.append(q[0])
+                else:
+                    res.append(0)
+            
+                if q and nums[l]==q[0]:
+                    q.popleft()
+                l+=1
+        return res
+ 
+
+#bruteforce
+
+nums=list(map(int,input().split()))
+k=int(input())
+n=len(nums)
+res=[]
+l=0
+
+for i in range(n-k+1):
+    found=False
+    for j in range(i,i+k):
+        if nums[j]<0:
+            res.append(nums[j])
+            found=True
+            break
+    if not found:
+        res.append(0)
+        
+print(res)
