@@ -1,7 +1,4 @@
-
 #optimal
-
-#User function Template for python3
 
 class Solution:
     def firstNegInt(self, nums, k):
