@@ -1,4 +1,24 @@
 #bruteforce
+
+class Solution:
+    def maximumSubarraySum(self, nums: List[int], k: int) -> int:
+        n=len(nums)
+        ans=0
+        for i in range(n-k+1):
+            sum=0
+            seen=set()
+            is_distinct=True
+            for j in range(i,i+k):
+                if nums[j] in seen:
+                    is_distinct=False
+                    break
+                seen.add(nums[j])
+                sum+=nums[j]
+            if is_distinct:
+                ans=max(ans,sum)
+        return ans
+#better
+
 def maximumSubarraySum(nums, k):
     n = len(nums)
     max_sum = 0
