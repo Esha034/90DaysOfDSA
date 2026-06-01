@@ -1,0 +1,38 @@
+
+# bruteforce
+
+class Solution:
+    def checkInclusion(self, s1: str, s2: str) -> bool:
+        m=len(s1)
+        target=sorted(s1)
+        for i in range(len(s2)-m+1):
+            window=s2[i:i+m]
+            if sorted(window)==target:
+                return True
+        return False
+
+
+#optimal
+
+class Solution:
+    def checkInclusion(self, s1: str, s2: str) -> bool:
+        from collections import Counter
+        m=len(s1)
+
+        count1=Counter(s1)
+        window=Counter()
+
+        l=0
+        for r in range(len(s2)):
+            window[s2[r]]+=1
+
+            if (r-l+1)>m:
+                window[s2[l]]-=1
+
+                if window[s2[l]]==0:
+                    del window[s2[l]]
+                l+=1
+
+            if window==count1:
+                return True
+        return False
