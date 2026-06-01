@@ -1,0 +1,40 @@
+#bruteforce
+TC- O((n-m+1) * m log m)
+class Solution:
+    def findAnagrams(self, s: str, p: str) -> List[int]:
+        m=len(p)
+        target=sorted(p)
+        res=[]
+
+        for i in range(len(s)-m+1):
+            window=s[i:i+m]
+            
+            if sorted(window)==target:
+                res.append(i)
+        return res
+
+
+# optimal
+TC-O(n)
+class Solution:
+    def findAnagrams(self, s: str, p: str) -> List[int]:
+        m=len(p)
+        from collections import Counter
+
+        count1=Counter(p)
+        window=Counter()
+        l=0
+        res=[]
+
+        for r in range(len(s)):
+            window[s[r]]+=1
+
+            if (r-l+1)>m:
+                window[s[l]]-=1
+
+                if window[s[l]]==0:
+                    del window[s[l]]
+                l+=1
+            if window==count1:
+                res.append(l)
+        return res
