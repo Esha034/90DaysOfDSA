@@ -1,3 +1,4 @@
+#optimal code
 class Solution:
     def compress(self, chars: List[str]) -> int:
         read,write=0,0
