@@ -16,6 +16,21 @@ for num in nums:
 
 print(candidate)
 
+#better
+ # from collections import defaultdict
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        n=len(nums)
+        from collections import defaultdict
+        freq=defaultdict(int)
+        
+        for num in nums:
+            freq[num]+=1
+            
+        for key in freq:
+            if freq[key]>n//2:
+                return key
+
 
 
 
