@@ -16,6 +16,9 @@ for num in nums:
 
 print(candidate)
 
+# Complexity:
+# Time Complexity: $O(n)$ — We only pass through the array exactly once.
+# Space Complexity: $O(1)$ — We only use two variables (candidate and count), requiring constant extra space.
 #better
  # from collections import defaultdict
 class Solution:
@@ -30,16 +33,9 @@ class Solution:
         for key in freq:
             if freq[key]>n//2:
                 return key
-
-
-
-
-
-
-
-
-
-
+# Complexity:
+# Time Complexity: $O(n)$ because we iterate through the list of size $n$ twice.
+# Space Complexity: $O(n)$ because in the worst-case scenario, we store up to $n$ unique elements in the dictionary.
 #better
 
 class Solution:
