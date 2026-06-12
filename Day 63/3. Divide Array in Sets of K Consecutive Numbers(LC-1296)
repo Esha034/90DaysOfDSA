@@ -1,0 +1,25 @@
+#optimal 
+
+from collections import Counter
+
+class Solution:
+    def isPossibleDivide(self, nums: List[int], k: int) -> bool:
+
+        if len(nums)%k!=0:
+            return False
+
+        freq=Counter(nums)
+
+        nums.sort()
+        
+        for num in nums:
+
+            if freq[num]==0:
+                continue
+
+            for nxt in range(num,num+k):
+                if freq[nxt]==0:
+                    return False
+
+                freq[nxt]-=1
+        return True
