@@ -1,0 +1,25 @@
+#optimal code
+
+from collections import Counter
+class Solution:
+    def isNStraightHand(self, hand: List[int], groupSize: int) -> bool:
+        n=len(hand)
+        s=groupSize
+
+        if len(hand)%s!=0:
+            return False
+
+        freq=Counter(hand)
+        
+        hand.sort()
+
+        for card in hand:
+
+            if freq[card]==0:
+                continue
+            
+            for nxt in range(card,card+s):
+                if freq[nxt]==0:
+                    return False
+                freq[nxt]-=1
+        return True
