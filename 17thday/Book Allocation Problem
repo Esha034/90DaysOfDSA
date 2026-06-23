@@ -1,3 +1,5 @@
+#optimal solution
+
 class Solution:
     def isPossible(self, arr, n, m, maxpages):
         pages = 0
