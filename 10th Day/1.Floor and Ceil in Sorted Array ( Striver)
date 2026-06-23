@@ -1,3 +1,5 @@
+#optimal solution 
+
 class Solution:
     def getFloorAndCeil(self, nums, x): 
         n = len(nums)
