@@ -1,3 +1,22 @@
+#optimal approach
+
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        # Step 1: Clean up leading, trailing, and multiple spaces between words
+        # Converting to a list makes it mutable so we can use two pointers easily
+        words = s.split()
+        
+        # Step 2: Use two pointers to reverse the list of words
+        left, right = 0, len(words) - 1
+        while left < right:
+            words[left], words[right] = words[right], words[left]
+            left += 1
+            right -= 1
+            
+        # Step 3: Join the reversed words with a single space
+        return " ".join(words)
+
+
 class Solution:
     def reverseVowels(self, s: str) -> str:
         vowels=set('aeiouAEIOU')
