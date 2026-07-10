@@ -1,3 +1,5 @@
+#optimal solution
+
 class Solution:
     def shipWithinDays(self, weights: List[int], days: int) -> int:
         def mincapacity(capacity):
@@ -24,19 +26,19 @@ class Solution:
         
         
 #bruteforce
-        # def mincapacity(capacity):
-        #     total=0
-        #     day=1
-        #     for w in weights:
-        #         total+=w
-        #         if total>capacity:
-        #             day+=1
-        #             total=w
-        #     return day<=days
+        def mincapacity(capacity):
+            total=0
+            day=1
+            for w in weights:
+                total+=w
+                if total>capacity:
+                    day+=1
+                    total=w
+            return day<=days
     
-        # mincap=max(weights)
-        # maxcap=sum(weights)
-        # for capacity in range(mincap,maxcap+1):
-        #     if mincapacity(capacity):
-        #         return capacity
+        mincap=max(weights)
+        maxcap=sum(weights)
+        for capacity in range(mincap,maxcap+1):
+            if mincapacity(capacity):
+                return capacity
         
