@@ -66,23 +66,3 @@ else:
 
 
 
-
-
-
-
-#better approach
-
-n=int(input("Enter a number:"))
-temp=n
-rev=0
-while(temp>0):
-    d=temp%10
-    rev=rev*10+d
-    temp//=10
-if rev==n:
-    print("Palindrome")
-else:
-    print("Not Palindrome")
-
-
-
