@@ -5,6 +5,6 @@ revno=0
 temp=n
 while temp>0:
     d=temp%10
-    revno=revno*10+d
+    revno*=10+d
     temp=temp//10
 print(f"Reverse of {n} is:{revno}")
