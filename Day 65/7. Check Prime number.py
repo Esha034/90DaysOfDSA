@@ -1,4 +1,6 @@
 #Write A Program To check whether A Given Number is prime or not prime number.
+
+
 #optimal approach
 import math
 n=int(input("Enter a number:"))
