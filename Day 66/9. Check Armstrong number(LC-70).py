@@ -4,8 +4,7 @@
 My approach has two main steps :
 
 First, I count the total number of digits.
-Second, I extract each digit from the number, 
-raise it to the power of the digit count, and add the results.
+Second, I extract each digit from the number, raise it to the power of the digit count, and add the results.
 
 Finally, I compare the calculated sum with the original number.
 If both are equal, the number is an Armstrong number.”'''
