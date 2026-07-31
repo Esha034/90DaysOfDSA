@@ -1,3 +1,15 @@
+''An Armstrong number is a numberthat is equal to the sum of each of its digits raised to the power of the total number of digits.
+
+
+My approach has two main steps :
+
+First, I count the total number of digits.
+Second, I extract each digit from the number, 
+raise it to the power of the digit count, and add the results.
+
+Finally, I compare the calculated sum with the original number.
+If both are equal, the number is an Armstrong number.”'''
+
 n = int(input("Enter a number: "))
 # Store the original number
 temp1 = n
