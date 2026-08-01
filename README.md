@@ -1,4 +1,4 @@
-# 📌 Striver A2Z DSA Sheet Progress 🚀
+# 📌 90 days DSA Progress 🚀
 
 This repository documents my consistent journey of solving problems from the **Striver A2Z DSA Sheet**, starting from **Day 40 to the present**.
 
