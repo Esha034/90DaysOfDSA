@@ -9,6 +9,8 @@ for _ in range(n):
     print(a, end=" ")
     a, b = b, a + b
 
+
+
 #better approach
 
 '''Intuition- I initialize the first two Fibonacci numbers as 0 and 1. 
