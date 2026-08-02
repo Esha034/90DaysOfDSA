@@ -49,7 +49,7 @@ while len(stack) > 0:
 
 print(reversed_nums)
 
-#3. Optimal Approach — Two Pointers ✅
+#3. Optimal Approach — Two Pointers 
 
 This is the approach you wrote.
 
