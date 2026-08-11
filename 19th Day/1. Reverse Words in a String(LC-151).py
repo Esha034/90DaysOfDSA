@@ -1,4 +1,5 @@
 #optimal solution
+
 class Solution:
     def reverseWords(self, s: str) -> str:
         chars=list(s.strip())
