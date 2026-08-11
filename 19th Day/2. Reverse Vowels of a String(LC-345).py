@@ -36,19 +36,19 @@ class Solution:
 
 
 #Bruteforce
-        # vow="aeiouAEIOU"
-        # arr = list(s)
-        # n=len(arr)
+        vow="aeiouAEIOU"
+        arr = list(s)
+        n=len(arr)
 
-        # vowels = [ch for ch in arr if ch in vow]
-        # vowels.reverse()
+        vowels = [ch for ch in arr if ch in vow]
+        vowels.reverse()
 
-        # j=0
-        # for i in range(n):
-        #     if arr[i] in vowels:
-        #         arr[i]=vowels[j]
-        #         j+=1
-        # return ''.join(arr)
+        j=0
+        for i in range(n):
+            if arr[i] in vowels:
+                arr[i]=vowels[j]
+                j+=1
+        return ''.join(arr)
          
     
 
