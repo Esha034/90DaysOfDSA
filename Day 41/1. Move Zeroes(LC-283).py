@@ -1,3 +1,5 @@
+#optimal approach- Two pointer
+
 class Solution:
     def moveZeroes(self, nums: List[int]) -> None:
         i=0
