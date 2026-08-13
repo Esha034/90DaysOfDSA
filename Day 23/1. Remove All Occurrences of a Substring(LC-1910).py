@@ -6,7 +6,7 @@ class Solution:
         stack=[]
         for c in s:
             stack.append(c)
-            if len(stack)>=l2 and ''.join(stack[-l2:]==part:
+            if len(stack)>=l2 and ''.join(stack[-l2:])==part:
                 for i in range(l2):
                     stack.pop()
         return ''.join(stack)
