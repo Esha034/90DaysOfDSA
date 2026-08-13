@@ -1,3 +1,5 @@
+#optimal approach
+
 class Solution:
     def removeOccurrences(self, s: str, part: str) -> str:
         l1,l2=len(s),len(part)
