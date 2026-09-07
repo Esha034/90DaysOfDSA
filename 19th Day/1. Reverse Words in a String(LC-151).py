@@ -34,22 +34,22 @@ class Solution:
 
 
 #bruteforce
-#         s=s.strip()
-#         i=len(s)-1
-#         words=[]
-#         word=""
-#         while i>=0:
-#             if s[i]!=" ":
-#                 word=s[i]+word
-#             else:
-#                 if word:
-#                     words.append(word)
-#                     word=""
-#             i-=1
+        s=s.strip()
+        i=len(s)-1
+        words=[]
+        word=""
+        while i>=0:
+            if s[i]!=" ":
+                word=s[i]+word
+            else:
+                if word:
+                    words.append(word)
+                    word=""
+            i-=1
             
-#         if word:
-#             words.append(word)
-#         return " ".join(words)
+        if word:
+            words.append(word)
+        return " ".join(words)
 
 
 
