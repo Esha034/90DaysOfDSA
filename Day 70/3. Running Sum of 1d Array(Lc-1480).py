@@ -9,5 +9,5 @@ class Solution:
             ans[i]=nums[i]+ans[i-1]
         return ans
 
-Link-https://leetcode.com/problems/running-sum-of-1d-array/
+#Link-https://leetcode.com/problems/running-sum-of-1d-array/
         
