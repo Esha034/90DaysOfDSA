@@ -14,4 +14,19 @@ class Solution:
                 ans.append(str(i))
         return ans
 
-        
+I will iterate through every integer from 1 to n and check its divisibility.
+
+First, I check whether the number is divisible by both 3 and 5. If it is, I append FizzBuzz to the result.
+
+Otherwise, if it is divisible by 3, I append Fizz. If it is divisible by 5, I append Buzz.
+
+If none of these conditions is satisfied, I convert the number into a string and append it to the result.
+
+Finally, I return the result array
+
+
+-Time complexity: (O(n)) — We iterate from 1 to n once, performing a constant number of checks per iteration.
+
+-Space complexity: (O(n)) — We store n strings in the output list.
+
+
